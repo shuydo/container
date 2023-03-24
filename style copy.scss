@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
+
+$bg-color: #11071f;
+$bg-header: #888; //#1a0b2e;
+$primary-txt: #fff;
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: $bg-color;
+}
+
+.header__container {
+  max-width: 1172px;
+  padding: 0 15px;
+  margin: 0px auto;
+  container-type: inline-size;
+  container-name: header;
+}
+
+.header {
+  background-color: $bg-header;
+  // position: relative;
+  padding: 28px 0;
+
+  &__title {
+    margin: 0;
+    color: $primary-txt;
+    font-size: 18px;
+    font-weight: 700; //bold
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+}
+
+.header::before,
+.header::after {
+  content: "";
+  display: block;
+  background-image: url(img/speaker.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+}
+
+// &::before {
+.gradient {
+  // content: ""; // background-image: url(img/gradient.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 0 auto;
+  height: 408px; // width: 100%;
+  max-width: 500px; //364px;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+@container header (min-width:800px) {
+  .header__title {
+    font-size: clamp(18px, 2cqw, 30px);
+    justify-content: flex-start;
+
+    &::before {
+      width: 51px;
+      height: 36px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
